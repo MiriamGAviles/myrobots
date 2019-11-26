@@ -10,37 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_160722) do
+ActiveRecord::Schema.define(version: 2019_11_11_094104) do
 
-  create_table "pg_search_documents", force: :cascade do |t|
-    t.text "content"
-    t.string "searchable_type"
-    t.integer "searchable_id"
+  create_table "armors", force: :cascade do |t|
+    t.string "a_type"
+    t.string "serial_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+    t.integer "robots_id"
+    t.index ["robots_id"], name: "index_armors_on_robots_id"
   end
 
   create_table "robots", force: :cascade do |t|
-    t.string "nombre"
-    t.string "tipo"
+    t.string "r_type"
+    t.string "name"
     t.string "serial_number"
-    t.integer "users_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_robots_on_users_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+  create_table "weapons", force: :cascade do |t|
+    t.string "w_type"
+    t.string "serial_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.integer "robots_id"
+    t.index ["robots_id"], name: "index_weapons_on_robots_id"
   end
 
+  add_foreign_key "armors", "robots", column: "robots_id"
+  add_foreign_key "weapons", "robots", column: "robots_id"
 end
+

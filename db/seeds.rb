@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+robot1 = Robot.create(name: "Robot1", r_type: "hackerobot", serial_number: "R000001")

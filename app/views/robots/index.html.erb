@@ -1,0 +1,17 @@
+<h1>Robots</h1>
+<table>
+	<tr><th><b>Name </b></th><th><b> Type</b></th><th><b>Serial Number</b></th></tr>
+	<% @robots.each do |values| %>
+			<tr>
+				<td><%=values.name%></td>
+				<td><%=values.r_type%></td>
+				<td><%=values.serial_number%></td>
+				<td><%= link_to 'Edit', edit_robot_path(values) %></td>
+				
+			</tr>
+			
+	<% end %>
+</table>
+<%= link_to "New Robot" ,new_robot_path %>
+
+

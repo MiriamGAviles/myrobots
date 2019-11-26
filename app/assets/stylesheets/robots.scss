@@ -1,0 +1,19 @@
+// Place all the styles related to the robots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+	font-family: verdana;
+}
+table, th, td  {
+	border: solid 1px black;
+	margin-bottom: 1rem;
+}
+input {
+	background-color: #B9D2EE;
+	margin-bottom: 1rem;
+}
+a {
+	text-decoration: none;
+	color: #8018f2;
+	font-weight:  bold;
+}

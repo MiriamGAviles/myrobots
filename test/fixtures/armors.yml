@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  r_type: MyString
-  name: MyString
+  a_type: MyString
   serial_number: MyString
 
 two:
-  r_type: MyString
-  name: MyString
+  a_type: MyString
   serial_number: MyString
