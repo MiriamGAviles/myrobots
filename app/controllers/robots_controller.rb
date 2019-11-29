@@ -1,6 +1,6 @@
 class RobotsController < ApplicationController
 
-	before_action :set_robot, only: [:show, :edit, :update, :delete]
+	before_action :set_robot, only: [:show, :edit, :update, :destroy]
 
   def index
   	@robots = Robot.all
@@ -12,7 +12,6 @@ class RobotsController < ApplicationController
   end
 
   def show 
-    
   end
 
   def new 
@@ -24,25 +23,31 @@ class RobotsController < ApplicationController
   	@robot=Robot.new(robots_params)
   	if @robot.save
       	#render :index
-        redirect_to robots_path, notice: 'robot was successfully created.' 
+        render :show, notice: 'robot was successfully created.' 
         
       else
-         render :new 
+         render "new"
     end
+    
   end
 
   def edit
-    render :update
   end
 
   def update
-     @robot.update
-      
+
+    if @robot.update(robots_params)
+      redirect_to @robot
+    else
+      render 'edit'
+    end
+    
   end
 
 
-  def delete
+  def destroy
   	@robot.destroy
+    redirect_to robots_path
   end
 
   private
@@ -53,7 +58,8 @@ class RobotsController < ApplicationController
   end
 
   def robots_params
-  	params.require(:robots).permit(:name,:serial_number, :r_type)
+
+  	params.require(:robot).permit(:name,:serial_number, :r_type)
   end
 
 end
