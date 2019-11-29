@@ -1,10 +1,4 @@
 <h1>Robots new</h1>
 
-<%= form_for :robots , url: robots_path do |f| %>
-	Name: <%= f.text_field :name %><br>
-	Type: <%= f.text_field :r_type %><br>
-	Serial Number: <%= f.text_field :serial_number %><br>
-	<%= f.submit %>
+<%= render 'form' %>
 
-<% end %>
-<%= link_to "Index", robots_path %>

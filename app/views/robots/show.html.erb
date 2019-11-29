@@ -1,1 +1,14 @@
 <h1>Robots show</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @robot.name %>
+</p>
+ <p>
+  <strong>Robot type:</strong>
+  <%= @robot.r_type %>
+</p>
+<p>
+  <strong>Serial  number:</strong>
+  <%= @robot.serial_number %>
+</p>
+<%= link_to "Index" ,robots_path %>

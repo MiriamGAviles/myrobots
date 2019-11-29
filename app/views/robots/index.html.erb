@@ -7,6 +7,7 @@
 				<td><%=values.r_type%></td>
 				<td><%=values.serial_number%></td>
 				<td><%= link_to 'Edit', edit_robot_path(values) %></td>
+				<td><%= link_to 'Destroy', robot_path(values), method: :delete %></td>
 				
 			</tr>
 			
