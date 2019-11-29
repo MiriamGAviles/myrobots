@@ -41,4 +41,3 @@ ActiveRecord::Schema.define(version: 2019_11_11_094104) do
   add_foreign_key "armors", "robots", column: "robots_id"
   add_foreign_key "weapons", "robots", column: "robots_id"
 end
-
